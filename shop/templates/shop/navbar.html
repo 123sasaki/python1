@@ -1,0 +1,25 @@
+
+
+
+<nav class="navbar  ">
+  <ul class="d-flex">
+      <li class="nav-item home"><a class="home_a" href="{% url 'shop:allProdCat' %}">Home</a> </li>
+
+      {% if item_count > 0 %}
+      <li class="nav-item">
+          <a class="nav-link " href="{% url 'cart:cart_detail' %}"><i class="fas fa-shopping-cart">({{item_count}})</i></a>
+     </li>
+     {% endif %}
+
+  <form class="my-lg-0 ml-auto  d-flex"  action="{% url 'search:searchResult' %}" method="get">
+        {% csrf_token %}
+      <input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search" name="q">
+      <button class="btn btn-secondary my-2 my-sm-0 " type="submit"><i class="fas fa-search"></i></button>
+    </form>
+    
+    </ul>
+  
+</div>
+
+</nav>
+
